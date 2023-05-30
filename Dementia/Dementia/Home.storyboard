@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="home" id="Y6W-OH-hqX" customClass="homeViewController" customModule="Dementia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLq-cU-2bD">
+                                <rect key="frame" x="20" y="355.33333333333331" width="166.66666666666666" height="166.33333333333331"/>
+                                <color key="backgroundColor" red="0.62745100259999997" green="0.83137255909999996" blue="0.8392156959" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lLq-cU-2bD" secondAttribute="height" multiplier="1:1" id="pS4-Sx-Nv4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="치매 진단"/>
+                                <connections>
+                                    <action selector="testBTNTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pJD-EU-yyc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezs-3E-Kub">
+                                <rect key="frame" x="206.66666666666663" y="355.33333333333331" width="166.33333333333337" height="166.33333333333331"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ezs-3E-Kub" secondAttribute="height" multiplier="1:1" id="cbM-Bl-3tZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="기록 확인"/>
+                                <connections>
+                                    <action selector="resultBTNTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3qM-XC-ua2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ezs-3E-Kub" secondAttribute="trailing" constant="20" id="EKg-iY-u1x"/>
+                            <constraint firstItem="ezs-3E-Kub" firstAttribute="leading" secondItem="lLq-cU-2bD" secondAttribute="trailing" constant="20" id="HEZ-1n-hBf"/>
+                            <constraint firstItem="ezs-3E-Kub" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="NFY-XZ-mKo"/>
+                            <constraint firstItem="lLq-cU-2bD" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="cTw-ch-ddp"/>
+                            <constraint firstItem="lLq-cU-2bD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="oDG-de-fxU"/>
+                            <constraint firstItem="lLq-cU-2bD" firstAttribute="height" secondItem="ezs-3E-Kub" secondAttribute="height" id="viI-RD-bGf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultBTN" destination="ezs-3E-Kub" id="NW4-qT-1D7"/>
+                        <outlet property="testBTN" destination="lLq-cU-2bD" id="ghE-XR-Zv8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
