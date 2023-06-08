@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,11 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLq-cU-2bD">
-                                <rect key="frame" x="20" y="355.33333333333331" width="166.66666666666666" height="166.33333333333331"/>
+                                <rect key="frame" x="20" y="312" width="353" height="51"/>
                                 <color key="backgroundColor" red="0.62745100259999997" green="0.83137255909999996" blue="0.8392156959" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lLq-cU-2bD" secondAttribute="height" multiplier="1:1" id="pS4-Sx-Nv4"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -32,11 +29,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezs-3E-Kub">
-                                <rect key="frame" x="206.66666666666663" y="355.33333333333331" width="166.33333333333337" height="166.33333333333331"/>
+                                <rect key="frame" x="20" y="514" width="353" height="51"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ezs-3E-Kub" secondAttribute="height" multiplier="1:1" id="cbM-Bl-3tZ"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -45,19 +39,35 @@
                                     <action selector="resultBTNTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3qM-XC-ua2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ks8-8q-aPc">
+                                <rect key="frame" x="20" y="413" width="353" height="51"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="최근 결과 확인">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="recentResultBTNTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5Te-Wy-FvD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lLq-cU-2bD" secondAttribute="trailing" constant="20" id="96j-4V-v5o"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ezs-3E-Kub" secondAttribute="trailing" constant="20" id="EKg-iY-u1x"/>
-                            <constraint firstItem="ezs-3E-Kub" firstAttribute="leading" secondItem="lLq-cU-2bD" secondAttribute="trailing" constant="20" id="HEZ-1n-hBf"/>
-                            <constraint firstItem="ezs-3E-Kub" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="NFY-XZ-mKo"/>
-                            <constraint firstItem="lLq-cU-2bD" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="cTw-ch-ddp"/>
+                            <constraint firstItem="ks8-8q-aPc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="HsT-wR-wcv"/>
+                            <constraint firstItem="ks8-8q-aPc" firstAttribute="top" secondItem="lLq-cU-2bD" secondAttribute="bottom" constant="50" id="JnW-9j-ee4"/>
+                            <constraint firstItem="ks8-8q-aPc" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="Mco-c5-5ee"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ks8-8q-aPc" secondAttribute="trailing" constant="20" id="R0R-tr-8bi"/>
+                            <constraint firstItem="ezs-3E-Kub" firstAttribute="top" secondItem="ks8-8q-aPc" secondAttribute="bottom" constant="50" id="YDD-Fl-P4a"/>
+                            <constraint firstItem="ezs-3E-Kub" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="giq-wk-tBY"/>
                             <constraint firstItem="lLq-cU-2bD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="oDG-de-fxU"/>
-                            <constraint firstItem="lLq-cU-2bD" firstAttribute="height" secondItem="ezs-3E-Kub" secondAttribute="height" id="viI-RD-bGf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="recent_resultBTN" destination="ks8-8q-aPc" id="Kev-Sc-ZEx"/>
                         <outlet property="resultBTN" destination="ezs-3E-Kub" id="NW4-qT-1D7"/>
                         <outlet property="testBTN" destination="lLq-cU-2bD" id="ghE-XR-Zv8"/>
                     </connections>

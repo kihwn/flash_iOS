@@ -70,18 +70,81 @@ class modifyViewController: UIViewController, UITableViewDataSource, UITableView
     
     func makeData(){
         modifyRQData = modifyRQ(radio: "", textA: [], textB: [])
-        for i in 0...textData[0].text.count + textData[1].text.count{
-            let cell = textTV.cellForRow(at: IndexPath(row: i, section: 0)) as! modifyTableViewCell
-            if i % 2 == 1{
-                modifyRQData.textB.append(cell.textView.text)
-            } else {
-                modifyRQData.textA.append(cell.textView.text)
+        if(textData[0].text.count + textData[1].text.count  > 0){
+            for i in 0...textData[0].text.count + textData[1].text.count - 1{
+                let cell = textTV.cellForRow(at: IndexPath(row: i, section: 0)) as! modifyTableViewCell
+                if i % 2 == 1{
+                    modifyRQData.textB.append(cell.textView.text)
+                } else {
+                    modifyRQData.textA.append(cell.textView.text)
+                }
             }
         }
     }
     
     func sendData(){
+        print(modifyRQData)
+        let url = URL(string: "http://54.180.75.134:8080/dementia/modified")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        let uploadData = try? JSONEncoder().encode(modifyRQData)
+        if let storedCookies = HTTPCookieStorage.shared.cookies(for: url!) {
+            // 쿠키를 요청에 추가
+            let cookieHeaders = HTTPCookie.requestHeaderFields(with: storedCookies)
+            request.allHTTPHeaderFields = cookieHeaders
+        }
+        
+        
+        URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
+            if let output = try? JSONDecoder().decode(Bool.self, from: data!) {
+                let alertController = UIAlertController(title: "성공", message: "업로드 성공", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "확인", style: .default) { (_) in
+                    alertController.dismiss(animated: true, completion: {
+                        if let navigationController = self.navigationController {
+                            let viewControllers = navigationController.viewControllers
+                            
+                            if viewControllers.count >= 2 {
+                                let targetViewController = viewControllers[viewControllers.count - 3]
+                                navigationController.popToViewController(targetViewController, animated: true)
+                            } else if viewControllers.count == 1 {
+                                navigationController.popViewController(animated: true)
+                            }
+                        }
+                    })
+                }
+                alertController.addAction(okAction)
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                return
+            }
+            
+            let alertController = UIAlertController(title: "오류", message: "다시 시도해주세요.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "확인", style: .default) { (_) in
+                alertController.dismiss(animated: true, completion: {
+                    if let navigationController = self.navigationController {
+                        let viewControllers = navigationController.viewControllers
+                        
+                        if viewControllers.count >= 2 {
+                            let targetViewController = viewControllers[viewControllers.count - 3]
+                            navigationController.popToViewController(targetViewController, animated: true)
+                        } else if viewControllers.count == 1 {
+                            navigationController.popViewController(animated: true)
+                        }
+                    }
+                })
+            }
+            alertController.addAction(okAction)
+            DispatchQueue.main.async {
+                self.present(alertController, animated: true, completion:nil)
+            }
+            
+            
+        }.resume()
     }
 }
 

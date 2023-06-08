@@ -33,7 +33,7 @@ class joinViewController: UIViewController {
         alertController.addAction(okAction)
         
         
-        let url = URL(string: "http://13.209.75.213:8080/user/signup")
+        let url = URL(string: "http://54.180.75.134:8080/user/signup")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         

@@ -2,7 +2,9 @@ import UIKit
 
 class homeViewController: UIViewController {
     @IBOutlet weak var testBTN: UIButton!
+    @IBOutlet weak var recent_resultBTN: UIButton!
     @IBOutlet weak var resultBTN: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,7 @@ class homeViewController: UIViewController {
     
     func buttonInit(){
         testBTN.layer.cornerRadius = 12
+        recent_resultBTN.layer.cornerRadius = 12
         resultBTN.layer.cornerRadius = 12
     }
     
@@ -23,6 +26,12 @@ class homeViewController: UIViewController {
         let testSB = UIStoryboard(name: "Test", bundle: nil)
         let testVC = testSB.instantiateViewController(withIdentifier:"test")
         self.navigationController?.pushViewController(testVC, animated: true)
+    }
+    
+    @IBAction func recentResultBTNTap(_ sender: Any) {
+        let resultSB = UIStoryboard(name: "Result", bundle: nil)
+        let recentVC = resultSB.instantiateViewController(withIdentifier:"recent")
+        self.navigationController?.pushViewController(recentVC, animated: true)
     }
     
     @IBAction func resultBTNTap(_ sender: Any) {

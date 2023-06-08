@@ -132,7 +132,7 @@ class testViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlay
         
         let fileURL = getDocumentsDirectory().appendingPathComponent("test.m4a")
         
-        let url = URL(string: "http://13.209.75.213:8080/dementia/upload")
+        let url = URL(string: "http://54.180.75.134:8080/dementia/upload")
         
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"

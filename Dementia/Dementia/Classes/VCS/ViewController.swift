@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstConstraint: NSLayoutConstraint!
     @IBOutlet weak var secondConstraint: NSLayoutConstraint!
@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var joinBTN: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        PWTF.delegate = self
+        
         
         buttonInit()
         tfInit()
@@ -68,6 +70,13 @@ class ViewController: UIViewController {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.PWTF {
+            self.tryLogin()
+        }
+        return true
+    }
+    
     func tryLogin(){
         let alertController = UIAlertController(title: "로그인 실패", message: "로그인에 실패했습니다. 다시 시도해주세요.", preferredStyle: .alert)
 
@@ -78,7 +87,7 @@ class ViewController: UIViewController {
         alertController.addAction(okAction)
         
         
-        let url = URL(string: "http://13.209.75.213:8080/user/login")
+        let url = URL(string: "http://54.180.75.134:8080/user/login")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         
@@ -106,6 +115,10 @@ class ViewController: UIViewController {
          
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error{
+                print(error)
+                return
+            }
             if let output = try? JSONDecoder().decode(Bool.self, from: data!) {
                 if output {
 //                    if let httpResponse = response as? HTTPURLResponse, let fields = httpResponse.allHeaderFields as? [String : String] {

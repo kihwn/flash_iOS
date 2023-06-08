@@ -28,6 +28,7 @@
 		8BCC189A2A10B05800FD14F5 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC18992A10B05800FD14F5 /* homeViewController.swift */; };
 		8BCC189C2A10B26A00FD14F5 /* hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC189B2A10B26A00FD14F5 /* hideKeyboard.swift */; };
 		8BCC189E2A10BA6700FD14F5 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BCC189D2A10BA6700FD14F5 /* Result.storyboard */; };
+		8BF4D0B42A2C6A30009C6FF4 /* recentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4D0B32A2C6A30009C6FF4 /* recentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		8BCC18992A10B05800FD14F5 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		8BCC189B2A10B26A00FD14F5 /* hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hideKeyboard.swift; sourceTree = "<group>"; };
 		8BCC189D2A10BA6700FD14F5 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		8BF4D0B32A2C6A30009C6FF4 /* recentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				8BCC18812A10A64B00FD14F5 /* ViewController.swift */,
 				8BCC18932A10AE2500FD14F5 /* joinViewController.swift */,
+				8BF4D0B32A2C6A30009C6FF4 /* recentViewController.swift */,
 				8BCC18992A10B05800FD14F5 /* homeViewController.swift */,
 				8B68AB332A10BF62009526A2 /* resultViewController.swift */,
 				8B68AB382A10C540009526A2 /* noticeViewController.swift */,
@@ -213,6 +216,7 @@
 			files = (
 				8BA651892A1C36CC00C664CB /* modifyViewController.swift in Sources */,
 				8BCC18822A10A64B00FD14F5 /* ViewController.swift in Sources */,
+				8BF4D0B42A2C6A30009C6FF4 /* recentViewController.swift in Sources */,
 				8BCC187E2A10A64B00FD14F5 /* AppDelegate.swift in Sources */,
 				8B68AB392A10C540009526A2 /* noticeViewController.swift in Sources */,
 				8B45C26E2A248DD400FA4803 /* modifyTableViewCell.swift in Sources */,
@@ -371,10 +375,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P5457JSRY9;
+				DEVELOPMENT_TEAM = FQ4G9SX78Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dementia/Info.plist;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크 권한을 허용해주세요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -385,7 +388,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = team7.dementia;
+				PRODUCT_BUNDLE_IDENTIFIER = kihwn.Dementia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -403,10 +406,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P5457JSRY9;
+				DEVELOPMENT_TEAM = FQ4G9SX78Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dementia/Info.plist;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크 권한을 허용해주세요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -417,7 +419,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = team7.dementia;
+				PRODUCT_BUNDLE_IDENTIFIER = kihwn.Dementia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
