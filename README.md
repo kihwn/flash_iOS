@@ -1,4 +1,4 @@
-# flash_iOS!
+# flash_iOS
 
 ## flash_project(Server) GitHub Link
 https://github.com/ShinHeeEul/flash_project
